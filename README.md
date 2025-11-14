@@ -332,7 +332,7 @@ Throughout development, I:
 *Registration form with validation*
 
 ### Sweet Card
-![Sweet Card Display](docs/screenshots/sweetcard.png)
+![alt text](image.png)
 *Individual sweet card with purchase option*
 
 ### Admin Features
