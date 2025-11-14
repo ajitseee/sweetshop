@@ -57,7 +57,7 @@ A full-stack MERN (MongoDB, Express, React, Node.js) application for managing a 
 
 ```
 sweetshopproject/
-├── backend/
+├── backend/                         # Node.js/Express backend
 │   ├── src/
 │   │   ├── config/
 │   │   │   └── database.ts          # MongoDB connection
@@ -84,21 +84,25 @@ sweetshopproject/
 │   ├── tsconfig.json
 │   └── jest.config.js
 │
-└── src/                             # React frontend
-    ├── components/
-    │   ├── Login.js                 # Login form
-    │   ├── Register.js              # Registration form
-    │   ├── Dashboard.js             # Main dashboard
-    │   ├── SweetCard.js             # Sweet display card
-    │   ├── AddSweetModal.js         # Add sweet modal
-    │   ├── ProtectedRoute.js        # Route protection
-    │   └── *.css                    # Component styles
-    ├── context/
-    │   └── AuthContext.js           # Authentication context
-    ├── services/
-    │   └── api.js                   # API client
-    ├── App.js                       # Main app component
-    └── index.js                     # App entry point
+└── frontend/                        # React frontend
+    ├── src/
+    │   ├── components/
+    │   │   ├── Login.js             # Login form
+    │   │   ├── Register.js          # Registration form
+    │   │   ├── Dashboard.js         # Main dashboard
+    │   │   ├── SweetCard.js         # Sweet display card
+    │   │   ├── AddSweetModal.js     # Add sweet modal
+    │   │   ├── ProtectedRoute.js    # Route protection
+    │   │   └── *.css                # Component styles
+    │   ├── context/
+    │   │   └── AuthContext.js       # Auth state management
+    │   ├── services/
+    │   │   └── api.js               # API client
+    │   ├── App.js                   # Main app component
+    │   └── index.js                 # App entry point
+    ├── public/
+    ├── package.json
+    └── README.md
 ```
 
 ## 🚀 Setup Instructions
@@ -142,12 +146,17 @@ sweetshopproject/
 
 ### Frontend Setup
 
-1. **Navigate to project root:**
+1. **Navigate to frontend directory:**
    ```bash
-   cd ..
+   cd frontend
    ```
 
-2. **Dependencies are already installed. Start the React development server:**
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Start the React development server:**
    ```bash
    npm start
    ```

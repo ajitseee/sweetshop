@@ -10,9 +10,11 @@ if [ ! -d "backend/node_modules" ]; then
 fi
 
 # Check if frontend dependencies are installed
-if [ ! -d "node_modules" ]; then
+if [ ! -d "frontend/node_modules" ]; then
     echo "📦 Installing frontend dependencies..."
+    cd frontend
     npm install
+    cd ..
 fi
 
 echo ""
@@ -28,8 +30,10 @@ echo "⏳ Waiting for backend to start..."
 sleep 5
 
 echo "🚀 Starting Frontend Server..."
+cd frontend
 npm start &
 FRONTEND_PID=$!
+cd ..
 
 echo ""
 echo "✅ Both servers are starting!"

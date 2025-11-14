@@ -11,9 +11,11 @@ if not exist "backend\node_modules" (
 )
 
 REM Check if frontend dependencies are installed
-if not exist "node_modules" (
+if not exist "frontend\node_modules" (
     echo 📦 Installing frontend dependencies...
+    cd frontend
     call npm install
+    cd ..
 )
 
 echo.
@@ -34,7 +36,7 @@ REM Wait a bit for backend to start
 timeout /t 3 /nobreak >nul
 
 REM Start frontend in new window
-start "Sweet Shop Frontend" cmd /k "npm start"
+start "Sweet Shop Frontend" cmd /k "cd frontend && npm start"
 
 echo.
 echo ✅ Both servers are starting in separate windows!
