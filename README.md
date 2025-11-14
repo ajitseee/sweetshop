@@ -324,12 +324,15 @@ Throughout development, I:
 *Main dashboard showing all available sweets with search and filters*
 
 ### Login Page
+![Login Page](docs/screenshots/login.png)
 *User-friendly login interface with gradient design*
 
 ### Registration Page
+![Registration Page](docs/screenshots/register.png)
 *Registration form with validation*
 
 ### Sweet Card
+![Sweet Card Display](docs/screenshots/sweetcard.png)
 *Individual sweet card with purchase option*
 
 ### Admin Features
