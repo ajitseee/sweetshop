@@ -24,6 +24,7 @@ function App() {
                 </ProtectedRoute>
               }
             />
+            {/** Admin route removed: admin features live in Dashboard */}
           </Routes>
         </div>
       </Router>

@@ -191,6 +191,7 @@ const Dashboard = () => {
               onPurchase={handlePurchase}
               onDelete={handleDelete}
               onRestock={handleRestock}
+              onUpdated={fetchSweets}
             />
           ))}
         </div>

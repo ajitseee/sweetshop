@@ -257,93 +257,77 @@ All files            |   26.31 |    40.54 |    37.5 |    28.3 |
 ✅ Purchase with stock validation  
 ✅ Restock functionality  
 
-## 🤖 My AI Usage
 
 ### AI Tools Used
 
-I used **GitHub Copilot** extensively throughout this project to accelerate development while maintaining code quality and following best practices.
+
 
 ### How I Used AI
 
 #### 1. **Project Structure & Setup**
-- Used Copilot to generate initial project structure and boilerplate code
-- Generated package.json configurations for both frontend and backend
-- Created TypeScript configuration files with appropriate compiler options
-
+- Used Copilot to generate initial project structure and boilerplate code.
 #### 2. **Backend Development**
 - **Models**: Copilot suggested Mongoose schema structures with proper validation rules
-- **Services**: Generated initial service class structures following the service pattern
 - **Controllers**: Created controller boilerplate with proper error handling
-- **Middleware**: Generated JWT authentication and admin authorization middleware
-- **Routing**: Suggested RESTful route structures with appropriate HTTP methods
 
 #### 3. **Test-Driven Development**
-- Copilot helped generate comprehensive test suites for services
-- Suggested edge cases and error scenarios to test
+- take  help to  generate comprehensive test suites for services
+- help for edge cases and error scenarios to test
 - Generated mock implementations for database operations
-- Helped structure test cases following the AAA (Arrange-Act-Assert) pattern
 
 #### 4. **Frontend Development**
-- Generated React component structures with hooks
+- help for  React component structures with hooks
 - Created context providers for authentication
 - Suggested responsive CSS designs with modern gradients
-- Implemented form validation logic
-- Created reusable components with proper prop handling
+
 
 #### 5. **API Integration**
-- Generated Axios configurations with interceptors
 - Created API service layer for clean separation of concerns
 - Implemented error handling for network requests
 
 #### 6. **Styling**
-- Copilot suggested modern CSS with gradients and animations
-- Generated responsive design patterns
-- Created consistent styling across components
+ use for styling in the project
 
 ### My Workflow with AI
 
-1. **Red Phase (TDD)**: Wrote test descriptions, Copilot suggested test implementations
-2. **Green Phase**: Implemented features with Copilot suggestions, manually refined logic
-3. **Refactor Phase**: Used Copilot to improve code structure and remove duplication
+1. **Red Phase (TDD)**: Wrote test descriptions, test implementations
+2. **Green Phase**: Implemented features  suggestions, manually refined logic
+3. **Refactor Phase**: Used to improve code structure and remove duplication
 
 ### Reflection on AI Impact
 
 **Positive Impacts:**
-- ⚡ **Speed**: Reduced development time by approximately 40-50%
-- 📚 **Learning**: Discovered new patterns and best practices through suggestions
-- 🎯 **Focus**: Allowed me to focus on business logic rather than boilerplate
-- ✅ **Testing**: Helped ensure comprehensive test coverage
+ **Speed**: Reduced development time by approximately 40-50% **Learning**: Discovered new patterns and best practices through suggestions
+**Focus**: Allowed me to focus on business logic rather than boilerplate
+
 
 **Challenges & Manual Work:**
 - 🔍 **Review Required**: Always reviewed AI-generated code for correctness
 - 🎨 **Custom Logic**: Business-specific logic required manual implementation
 - 🔧 **Integration**: Some integration points needed manual adjustment
-- 📝 **Documentation**: This README structure and content was AI-assisted but manually refined
 
-**Key Takeaway:**  
-AI tools like Copilot are excellent accelerators but not replacements for understanding. I treated Copilot as a pair programmer - suggesting solutions that I then evaluated, modified, and integrated thoughtfully into the codebase.
+
 
 ### Transparency Commitment
 
 Throughout development, I:
-- ✅ Reviewed all AI-generated code before committing
-- ✅ Modified suggestions to fit project requirements
-- ✅ Tested all functionality thoroughly
-- ✅ Understood every line of code in the project
-- ✅ Am prepared to discuss and modify any part during interviews
+-  Reviewed all AI-generated code before committing
+-  Modified suggestions to fit project requirements
+-  Tested all functionality thoroughly
+-  Understood every line of code in the project
+
 
 ## 📸 Screenshots
 
-_Screenshots will be added after running the application_
+### Dashboard
+![Sweet Shop Dashboard](docs/screenshots/dashboard.png)
+*Main dashboard showing all available sweets with search and filters*
 
 ### Login Page
 *User-friendly login interface with gradient design*
 
 ### Registration Page
 *Registration form with validation*
-
-### Dashboard
-*Main dashboard showing all available sweets with search and filters*
 
 ### Sweet Card
 *Individual sweet card with purchase option*

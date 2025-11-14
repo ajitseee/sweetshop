@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import './SweetCard.css';
+import EditSweetModal from './EditSweetModal';
 
-const SweetCard = ({ sweet, isAdmin, onPurchase, onDelete, onRestock }) => {
+const SweetCard = ({ sweet, isAdmin, onPurchase, onDelete, onRestock, onUpdated, showPurchase = true }) => {
   const [purchaseQuantity, setPurchaseQuantity] = useState(1);
   const [restockQuantity, setRestockQuantity] = useState(10);
   const [showRestockInput, setShowRestockInput] = useState(false);
+  const [showEditModal, setShowEditModal] = useState(false);
 
   const handlePurchase = () => {
     if (purchaseQuantity > 0 && purchaseQuantity <= sweet.quantity) {
@@ -46,7 +48,7 @@ const SweetCard = ({ sweet, isAdmin, onPurchase, onDelete, onRestock }) => {
         </div>
 
         <div className="sweet-actions">
-          {sweet.quantity > 0 && (
+          {showPurchase && sweet.quantity > 0 && (
             <div className="purchase-section">
               <input
                 type="number"
@@ -68,6 +70,12 @@ const SweetCard = ({ sweet, isAdmin, onPurchase, onDelete, onRestock }) => {
 
           {isAdmin && (
             <div className="admin-actions">
+              <button
+                onClick={() => setShowEditModal(true)}
+                className="btn btn-secondary"
+              >
+                Edit
+              </button>
               {!showRestockInput ? (
                 <button
                   onClick={() => setShowRestockInput(true)}
@@ -92,7 +100,6 @@ const SweetCard = ({ sweet, isAdmin, onPurchase, onDelete, onRestock }) => {
                   </button>
                 </div>
               )}
-              
               <button
                 onClick={() => onDelete(sweet._id)}
                 className="btn btn-danger"
@@ -103,6 +110,19 @@ const SweetCard = ({ sweet, isAdmin, onPurchase, onDelete, onRestock }) => {
           )}
         </div>
       </div>
+
+      {showEditModal && (
+        <EditSweetModal
+          sweet={sweet}
+          onClose={() => setShowEditModal(false)}
+          onSuccess={() => {
+            setShowEditModal(false);
+            if (typeof onUpdated === 'function') {
+              onUpdated();
+            }
+          }}
+        />
+      )}
     </div>
   );
 };
