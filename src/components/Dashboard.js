@@ -19,10 +19,12 @@ const Dashboard = () => {
 
   useEffect(() => {
     fetchSweets();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     filterSweets();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchTerm, categoryFilter, priceRange, sweets]);
 
   const fetchSweets = async () => {
