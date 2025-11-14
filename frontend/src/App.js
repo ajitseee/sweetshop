@@ -4,6 +4,7 @@ import { AuthProvider } from './context/AuthContext';
 import Login from './components/Login';
 import Register from './components/Register';
 import Dashboard from './components/Dashboard';
+import Admin from './components/Admin';
 import ProtectedRoute from './components/ProtectedRoute';
 import './App.css';
 
@@ -24,7 +25,14 @@ function App() {
                 </ProtectedRoute>
               }
             />
-            {/** Admin route removed: admin features live in Dashboard */}
+            <Route
+              path="/admin"
+              element={
+                <ProtectedRoute adminOnly={true}>
+                  <Admin />
+                </ProtectedRoute>
+              }
+            />
           </Routes>
         </div>
       </Router>

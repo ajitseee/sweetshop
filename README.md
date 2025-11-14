@@ -332,11 +332,17 @@ Throughout development, I:
 *Registration form with validation*
 
 ### Sweet Card
-![alt text](image.png)
+![Sweet Card Display](docs/screenshots/sweetcard.png)
 *Individual sweet card with purchase option*
 
-### Admin Features
+### Admin Panel
+![Admin Panel](docs/screenshots/admin.png)
 *Admin view with add, edit, delete, and restock options*
+
+**Admin Login Credentials:**
+- Email: admin@sweetshop.com
+- Password: admin123
+
 
 ## 🚀 Deployment
 

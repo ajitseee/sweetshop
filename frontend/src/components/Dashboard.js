@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { sweetsAPI } from '../services/api';
 import { useAuth } from '../context/AuthContext';
 import SweetCard from './SweetCard';
-import AddSweetModal from './AddSweetModal';
 import './Dashboard.css';
 
 const Dashboard = () => {
@@ -13,9 +13,9 @@ const Dashboard = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [categoryFilter, setCategoryFilter] = useState('');
   const [priceRange, setPriceRange] = useState({ min: '', max: '' });
-  const [showAddModal, setShowAddModal] = useState(false);
   
   const { user, isAdmin, logout } = useAuth();
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchSweets();
@@ -78,25 +78,7 @@ const Dashboard = () => {
     }
   };
 
-  const handleDelete = async (sweetId) => {
-    if (window.confirm('Are you sure you want to delete this sweet?')) {
-      try {
-        await sweetsAPI.delete(sweetId);
-        fetchSweets();
-      } catch (err) {
-        alert(err.response?.data?.message || 'Delete failed');
-      }
-    }
-  };
 
-  const handleRestock = async (sweetId, quantity) => {
-    try {
-      await sweetsAPI.restock(sweetId, quantity);
-      fetchSweets();
-    } catch (err) {
-      alert(err.response?.data?.message || 'Restock failed');
-    }
-  };
 
   const categories = [...new Set(sweets.map(sweet => sweet.category))];
 
@@ -104,10 +86,15 @@ const Dashboard = () => {
     <div className="dashboard">
       <header className="dashboard-header">
         <div className="header-content">
-          <h1>🍬 Sweet Shop Management</h1>
+          <h1>🍬 Sweet Shop</h1>
           <div className="user-info">
             <span>Welcome, {user?.username}!</span>
-            {isAdmin() && <span className="admin-badge">Admin</span>}
+            {isAdmin() && (
+              <>
+                <span className="admin-badge">Admin</span>
+                <button onClick={() => navigate('/admin')} className="btn btn-admin">Admin Panel</button>
+              </>
+            )}
             <button onClick={logout} className="btn btn-secondary">Logout</button>
           </div>
         </div>
@@ -164,15 +151,6 @@ const Dashboard = () => {
               Clear Filters
             </button>
           </div>
-
-          {isAdmin() && (
-            <button
-              onClick={() => setShowAddModal(true)}
-              className="btn btn-primary add-sweet-btn"
-            >
-              + Add New Sweet
-            </button>
-          )}
         </div>
 
         {loading && <div className="loading">Loading sweets...</div>}
@@ -187,25 +165,13 @@ const Dashboard = () => {
             <SweetCard
               key={sweet._id}
               sweet={sweet}
-              isAdmin={isAdmin()}
+              isAdmin={false}
               onPurchase={handlePurchase}
-              onDelete={handleDelete}
-              onRestock={handleRestock}
               onUpdated={fetchSweets}
             />
           ))}
         </div>
       </div>
-
-      {showAddModal && (
-        <AddSweetModal
-          onClose={() => setShowAddModal(false)}
-          onSuccess={() => {
-            setShowAddModal(false);
-            fetchSweets();
-          }}
-        />
-      )}
     </div>
   );
 };
