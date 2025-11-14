@@ -30,10 +30,8 @@ echo "⏳ Waiting for backend to start..."
 sleep 5
 
 echo "🚀 Starting Frontend Server..."
-cd frontend
 npm start &
 FRONTEND_PID=$!
-cd ..
 
 echo ""
 echo "✅ Both servers are starting!"

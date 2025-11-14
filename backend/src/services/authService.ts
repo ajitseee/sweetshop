@@ -22,7 +22,7 @@ export class AuthService {
     });
 
     // Generate token
-    const token = this.generateToken(user._id.toString(), user.role);
+    const token = this.generateToken((user._id as any).toString(), user.role);
 
     return {
       user: {
@@ -49,7 +49,7 @@ export class AuthService {
     }
 
     // Generate token
-    const token = this.generateToken(user._id.toString(), user.role);
+    const token = this.generateToken((user._id as any).toString(), user.role);
 
     return {
       user: {

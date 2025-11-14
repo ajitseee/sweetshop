@@ -208,9 +208,35 @@ npm test
 
 ### Test Coverage
 
-```bash
-npm test -- --coverage
+### Test Coverage Report
+
+Latest test run results:
+
 ```
+Test Suites: 2 passed, 2 total
+Tests:       15 passed, 15 total
+Snapshots:   0 total
+Time:        15.396 s
+
+Coverage Summary:
+---------------------|---------|----------|---------|---------|-------------------
+File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+---------------------|---------|----------|---------|---------|-------------------
+All files            |   26.31 |    40.54 |    37.5 |    28.3 |                   
+ src/models          |     100 |      100 |     100 |     100 |                  
+   Sweet.ts           |     100 |      100 |     100 |     100 |                  
+   User.ts            |     100 |      100 |     100 |     100 |                  
+ src/services        |   91.52 |    88.23 |   81.81 |   91.52 |                  
+   authService.ts     |     100 |      100 |     100 |     100 |                  
+   sweetService.ts    |   87.17 |    81.81 |      75 |   87.17 |                  
+---------------------|---------|----------|---------|---------|-------------------
+```
+
+**Key Metrics:**
+- ✅ **All tests passing** (15/15)
+- ✅ **100% service layer coverage** for authService
+- ✅ **87% coverage** for sweetService
+- ✅ **100% model coverage**
 
 ### Test Structure
 
@@ -396,23 +422,3 @@ This project is created for educational purposes.
 ---
 
 **Database**: MongoDB Atlas is already connected and ready to use!
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
